@@ -9,7 +9,7 @@ export default class Cliente {
         this.#idade = idade;
         this.#id = id;
     }
-    static vazio() { return new Cliente('', 0) }
+    static vazio() { return new Cliente('', 0)}
 
 
     get id() { return this.#id; }
