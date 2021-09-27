@@ -1,14 +1,14 @@
-import firebase from 'firebase';
-import 'firebase/firestore';
+import { getFirestore } from '@firebase/firestore';
+import { initializeApp } from 'firebase/app';
 
-//verificaçao de inicializaçaão 
-if (!firebase.apps.length) {
-    firebase.initializeApp({
-        apiKey: process.env.NEXT_PULBIC_FIREVASE_API_KEY,
-        authDomain: process.env.NEXT_PULBIC_FIREVASE_AUTH_DOMAIN,
-        projectId: process.env.NEXT_PULBIC_FIREVASE_PROJECT_ID
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+};
 
-    })
-}
+const app = initializeApp(firebaseConfig);
 
-export default firebase
+const db = getFirestore(app);
+
+export { app, db };

@@ -1,7 +1,7 @@
 import Cliente from "./Cliente";
 
 export default interface ClienteRepositorio {
-    salvar(cliente: Cliente) : Promise<Cliente>
-    excluir(cliente: Cliente) : Promise<void>
-    obterTodos(cliente: Cliente) : Promise<Cliente[]>
+    save(cliente: Cliente) : Promise<Cliente>
+    delete(cliente: Cliente) : Promise<void>
+    all() : Promise<Cliente[]>
 } 

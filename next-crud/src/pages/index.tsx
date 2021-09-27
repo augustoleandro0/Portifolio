@@ -3,11 +3,9 @@ import Layout from "../components/Layout"
 import Tabela from "../components/tabela"
 import Form from "../components/Form"
 import Cliente from "../core/Cliente"
-import ColecaoCliente from "../firebase/db/coleçãoCliente"
+import ColecaoCliente from "../firebase/db/colecaoCliente"
 import ClienteRepositorio from "../core/clienteRepositorio"
-
-
-
+               
 import { useEffect, useState } from "react"
 
 
@@ -24,9 +22,14 @@ const repo: ClienteRepositorio  = new ColecaoCliente()
   const [Visible, setVisible] = useState<'table' | 'form'>()
 
 
-   useEffect(() => {
-      repo.obterTodos().then(setClientes)
-   }, [])
+   useEffect(all, [])
+
+   function all(){
+    repo.all().then(clientes =>  {
+      setClientes(clientes)
+      setVisible('table')
+    })
+   }
 
 
   function clienteSelecion() {
@@ -44,7 +47,7 @@ const repo: ClienteRepositorio  = new ColecaoCliente()
   }
 
  function saveCliente (cliente: Cliente) {
-    console.log(cliente);
+    repo.save(cliente);
     setVisible('table')
  }
 
@@ -53,7 +56,7 @@ const repo: ClienteRepositorio  = new ColecaoCliente()
 
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+    <div className={`flex justify-center items-center h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white`}>
 
       <Layout titulo="App Crud Next JS and Firebase" >
         {Visible === 'table' ? (

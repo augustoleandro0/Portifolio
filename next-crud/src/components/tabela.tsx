@@ -30,7 +30,7 @@ export default function Tabela(props: TabelaProps) {
                 <tr key={cliente.id} className={`${ i % 2 === 0 ?' bg-purple-100' : 'bg-purple-200'}`}>
                     <td className="text-left p-4">{cliente.id}</td>
                     <td className="text-left p-4">{cliente.name}</td>
-                    <td className="text-left p-4">{cliente.idade}</td>
+                    <td className="text-left p-4">{cliente.age}</td>
                     { exibirActions ? renderActions(cliente) : false}
                 </tr>
             )
@@ -40,10 +40,10 @@ export default function Tabela(props: TabelaProps) {
         return(
             <td className="flex justify-center">
                 {props.clienteSelecion ? (
-                     <button onClick={() => props.clienteSelecion?.(cliente)} className="flex justify-center items-center text-green-600 rounded-full p-2  m-1 hover:bg-purple-50">{iconeEdit}</button>
+                     <button onClick={() => props.clienteSelecion?.(cliente)} className={`flex justify-center items-center text-green-600 rounded-full p-2  m-1 hover:bg-purple-50`}>{iconeEdit}</button>
                 ): false}
                  {props.clienteDelete ? (
-                    <button  onClick={() => props.clienteDelete?.(cliente)}  className="flex justify-center items-center text-red-500 rounded-full p-2  m-1 hover:bg-purple-50">{iconeTrash}</button>
+                    <button  onClick={() => props.clienteDelete?.(cliente)}  className={`flex justify-center items-center text-red-500 rounded-full p-2  m-1 hover:bg-purple-50`}>{iconeTrash}</button>
                 ): false}
             </td>
         )

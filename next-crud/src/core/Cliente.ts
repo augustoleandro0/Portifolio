@@ -2,11 +2,11 @@ export default class Cliente {
     //O # representa um atributo privado nativo do JS (similar ao private do TypeScript)
      #id : string;
      #name : string;
-     #idade : number;
+     #age : number;
 
-    constructor( name : string, idade : number, id = null ) {
+    constructor( name: string, age: number, id: string = null) {
         this.#name = name;
-        this.#idade = idade;
+        this.#age = age;
         this.#id = id;
     }
     static vazio() { return new Cliente('', 0)}
@@ -14,7 +14,7 @@ export default class Cliente {
 
     get id() { return this.#id; }
     get name() { return this.#name; }
-    get idade() { return this.#idade; }
+    get age() { return this.#age; }
 
 
 }
