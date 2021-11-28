@@ -1,0 +1,38 @@
+
+.template {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr 1fr ;
+    margin-top: 60px;
+    row-gap: 10px;
+    column-gap: 10px;
+
+}
+
+.image:hover{
+    background-color: #000;
+    opacity: 0.5;
+}
+@media only screen and (max-width: 1000px){
+    .template {
+        display: grid;
+        position: relative;
+        margin-top: 110px;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 10px;
+        column-gap: 10px;
+    
+    }
+}
+
+@media only screen and (max-width: 558px){
+    .template {
+        display: grid;
+        position: relative;
+        margin-top: 110px;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 15px;
+        column-gap: 10px;
+    }
+    
+}

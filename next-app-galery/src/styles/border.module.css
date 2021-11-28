@@ -1,0 +1,6 @@
+.underline:hover{
+  padding-bottom: 4px ;
+  border-bottom: 2px solid #000;
+  transition: all .3s ease;
+  transition-delay: 0.1s;
+}
